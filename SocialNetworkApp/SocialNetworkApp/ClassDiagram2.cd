@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SocialNetworkApp.AuthConfig">
+    <Position X="13.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\AuthConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.BundleConfig">
+    <Position X="13.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.FilterConfig">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.RouteConfig">
+    <Position X="13.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.WebApiConfig">
+    <Position X="13.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\WebApiConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.MvcApplication" Collapsed="true">
+    <Position X="4.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Controllers.AccountController">
+    <Position X="21.25" Y="8.75" Width="2.25" />
+    <NestedTypes>
+      <Enum Name="SocialNetworkApp.Controllers.AccountController.ManageMessageId" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\AccountController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAABQAGAAAAAAAABAAAAAAAQAAQAIAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Controllers.AdminController">
+    <Position X="6.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Controllers.GroupController">
+    <Position X="4.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\GroupController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Controllers.HomeController">
+    <Position X="5.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAIAAAAAIAAAAABEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Controllers.MapController">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAIAAAAAEEAAAAAAAA=</HashCode>
+      <FileName>Controllers\MapController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Controllers.PostController">
+    <Position X="8.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\PostController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Controllers.SideBarController">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAQgAAgQAAAAAIAABAIAAAAAAEAAAIAAAA=</HashCode>
+      <FileName>Controllers\SideBarController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Controllers.UserController">
+    <Position X="2.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\UserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Filters.InitializeSimpleMembershipAttribute" Collapsed="true">
+    <Position X="1" Y="1" Width="2.75" />
+    <NestedTypes>
+      <Class Name="SocialNetworkApp.Filters.InitializeSimpleMembershipAttribute.SimpleMembershipInitializer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Filters\InitializeSimpleMembershipAttribute.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQACgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\InitializeSimpleMembershipAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.UsersContext" Collapsed="true">
+    <Position X="20.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.UserProfile" Collapsed="true">
+    <Position X="22.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.LocalPasswordModel" Collapsed="true">
+    <Position X="22.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.LoginModel" Collapsed="true">
+    <Position X="22.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQAAAAAgAAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.RegisterModel" Collapsed="true">
+    <Position X="22.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.GroupRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAABACAAAAAAAA=</HashCode>
+      <FileName>Models\GroupRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SocialNetworkApp.Models.OAuthWebSecurityWrapper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABEAAAQAEAAAAQEABAAAAAAAAAAAAAAUAQQIAAA=</HashCode>
+      <FileName>Models\OAuthWebSecurityWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SocialNetworkApp.Models.PostRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAIAAAQAQAAAIAAAAAAAAAAEAAAAAAAACABAAAAA=</HashCode>
+      <FileName>Models\PostRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SocialNetworkApp.Models.SocialContext">
+    <Position X="10.5" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAGAAAAAAAAAABAIAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SocialModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.Post" Collapsed="true">
+    <Position X="13.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQBAGAACAAAAAEAAEIAAAggAgAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Models\SocialModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.Group" Collapsed="true">
+    <Position X="12" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAQAAAAgAABAAAQAAAAAAAAAAAAAIAAAAAAAE=</HashCode>
+      <FileName>Models\SocialModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.User" Collapsed="true">
+    <Position X="15.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAGAAAAAAAAAAJACAAQgAAAQAAAAAAQAAAAgAAAA=</HashCode>
+      <FileName>Models\SocialModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.Location" Collapsed="true">
+    <Position X="17.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACEAAAAAABAIIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SocialModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.ProfileModel">
+    <Position X="14.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAEAAAAAIAAgAAAAAAAAAIAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Models\SocialModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.PostLocationModel">
+    <Position X="5.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SocialModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.PopularGroupsModel">
+    <Position X="5.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SocialModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.SearchGroupsModel">
+    <Position X="3.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SocialModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialNetworkApp.Models.UserRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="15.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="SocialNetworkApp.Models.UserRepository.UserComparer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\UserRepository.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EAIQAKAAAAQQEAgADgBAAAAABAEAAABAECAAgAEAAAA=</HashCode>
+      <FileName>Models\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SocialNetworkApp.Models.WebSecurityWrapper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAgAAAAAAABAIAAACBAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\WebSecurityWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="SocialNetworkApp.Models.IGroupRepository" Collapsed="true">
+    <Position X="12" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAAA=</HashCode>
+      <FileName>Models\IGroupRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SocialNetworkApp.Models.IOAuthWebSecurity" Collapsed="true">
+    <Position X="19.75" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABEAAAQAEAAAAQEABAAAAAAAAAAAAAAUAQQIAAA=</HashCode>
+      <FileName>Models\IOAuthWebSecurity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SocialNetworkApp.Models.IPostRepository" Collapsed="true">
+    <Position X="13.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIAAAQAAAAAIAAAAAAAAAAEAAAAAAAACABAAAAA=</HashCode>
+      <FileName>Models\IPostRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SocialNetworkApp.Models.IUserRepository" Collapsed="true">
+    <Position X="15.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAIQAKAAAAQAEAgADgBAAAAABAEAAABAECAAgAEAAAA=</HashCode>
+      <FileName>Models\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SocialNetworkApp.Models.IWebSecurity" Collapsed="true">
+    <Position X="21.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAgAAAAAAABAIAAACBAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\IWebSecurity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

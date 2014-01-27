@@ -1,0 +1,18 @@
+﻿@model IEnumerable<SocialNetworkApp.Models.Group>
+
+<div>
+   <span style="color: #88bbfe">Subscriptions</span>
+@{
+    int k = 0;
+    foreach (var item in Model){
+        k += item.GroupName.Length + 2;
+        if (k < 200){
+    <span>&nbsp</span>@Ajax.ActionLink(item.GroupName, "_ViewGroupData", "Sidebar", new { gid = item.GroupID }, new AjaxOptions() { UpdateTargetId = "mainLeft" }, new { @class = "footerlinks" })
+            
+        } 
+}
+    <div style="float:right">
+        @Ajax.ActionLink( "Your Groups", "_ViewYourGroups","Sidebar", new {}, new AjaxOptions{ UpdateTargetId="mainLeft"}, new {@class = "footerlinks2"})
+    </div>
+}
+</div>

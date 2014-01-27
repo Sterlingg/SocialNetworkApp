@@ -1,0 +1,65 @@
+﻿@model SocialNetworkApp.Models.Group
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Group</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GroupName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GroupName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsPrivate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsPrivate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GroupDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GroupDescription)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Users)
+    </div>
+    <table>
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </tr>
+        }
+            
+    
+    </table>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Users2)
+    </div>
+    <table>
+        @foreach (var item in Model.Users2)
+        {
+            <tr>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </tr>
+        }
+            
+    
+    </table>
+
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.GroupID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

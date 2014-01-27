@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="SocialNetworkApp.Tests" Label="SocialNetworkApp.Tests" Category="Project" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20710.0" Label="Microsoft.AspNet.Razor 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Label="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Label="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Label="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.0.20710.0" Label="Microsoft.Net.Http 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Newtonsoft.Json 4.5.6" Label="Newtonsoft.Json 4.5.6" Category="Package" />
+    <Node Id="SocialNetworkApp" Label="SocialNetworkApp" Category="Project" />
+    <Node Id="DotNetOpenAuth.AspNet 4.0.3.12153" Label="DotNetOpenAuth.AspNet 4.0.3.12153" Category="Package" />
+    <Node Id="DotNetOpenAuth.Core 4.0.3.12153" Label="DotNetOpenAuth.Core 4.0.3.12153" Category="Package" />
+    <Node Id="DotNetOpenAuth.OAuth.Consumer 4.0.3.12153" Label="DotNetOpenAuth.OAuth.Consumer 4.0.3.12153" Category="Package" />
+    <Node Id="DotNetOpenAuth.OAuth.Core 4.0.3.12153" Label="DotNetOpenAuth.OAuth.Core 4.0.3.12153" Category="Package" />
+    <Node Id="DotNetOpenAuth.OpenId.Core 4.0.3.12153" Label="DotNetOpenAuth.OpenId.Core 4.0.3.12153" Category="Package" />
+    <Node Id="DotNetOpenAuth.OpenId.RelyingParty 4.0.3.12153" Label="DotNetOpenAuth.OpenId.RelyingParty 4.0.3.12153" Category="Package" />
+    <Node Id="EntityFramework 5.0.0" Label="EntityFramework 5.0.0" Category="Package" />
+    <Node Id="jQuery 1.7.1.1" Label="jQuery 1.7.1.1" Category="Package" />
+    <Node Id="jQuery.UI.Combined 1.8.20.1" Label="jQuery.UI.Combined 1.8.20.1" Category="Package" />
+    <Node Id="jQuery.Validation 1.9.0.1" Label="jQuery.Validation 1.9.0.1" Category="Package" />
+    <Node Id="knockoutjs 2.1.0" Label="knockoutjs 2.1.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20710.0" Label="Microsoft.AspNet.Razor 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.0.0" Label="Microsoft.AspNet.Web.Optimization 1.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi 4.0.20710.0" Label="Microsoft.AspNet.WebApi 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Label="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Label="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Label="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages.Data 2.0.20710.0" Label="Microsoft.AspNet.WebPages.Data 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages.OAuth 2.0.20710.0" Label="Microsoft.AspNet.WebPages.OAuth 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages.WebData 2.0.20710.0" Label="Microsoft.AspNet.WebPages.WebData 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Label="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Label="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.0.20710.0" Label="Microsoft.Net.Http 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Modernizr 2.5.3" Label="Modernizr 2.5.3" Category="Package" />
+    <Node Id="Newtonsoft.Json 4.5.6" Label="Newtonsoft.Json 4.5.6" Category="Package" />
+    <Node Id="WebGrease 1.1.0" Label="WebGrease 1.1.0" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Target="Microsoft.Net.Http 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Target="Newtonsoft.Json 4.5.6" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Target="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Target="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="SocialNetworkApp.Tests" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Installed Package" />
+    <Link Source="SocialNetworkApp.Tests" Target="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Category="Installed Package" />
+    <Link Source="DotNetOpenAuth.AspNet 4.0.3.12153" Target="DotNetOpenAuth.OpenId.RelyingParty 4.0.3.12153" Category="Package Dependency" />
+    <Link Source="DotNetOpenAuth.AspNet 4.0.3.12153" Target="DotNetOpenAuth.OAuth.Consumer 4.0.3.12153" Category="Package Dependency" />
+    <Link Source="DotNetOpenAuth.OAuth.Consumer 4.0.3.12153" Target="DotNetOpenAuth.OAuth.Core 4.0.3.12153" Category="Package Dependency" />
+    <Link Source="DotNetOpenAuth.OAuth.Core 4.0.3.12153" Target="DotNetOpenAuth.Core 4.0.3.12153" Category="Package Dependency" />
+    <Link Source="DotNetOpenAuth.OpenId.Core 4.0.3.12153" Target="DotNetOpenAuth.Core 4.0.3.12153" Category="Package Dependency" />
+    <Link Source="DotNetOpenAuth.OpenId.RelyingParty 4.0.3.12153" Target="DotNetOpenAuth.OpenId.Core 4.0.3.12153" Category="Package Dependency" />
+    <Link Source="jQuery.UI.Combined 1.8.20.1" Target="jQuery 1.7.1.1" Category="Package Dependency" />
+    <Link Source="jQuery.Validation 1.9.0.1" Target="jQuery 1.7.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="WebGrease 1.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi 4.0.20710.0" Target="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Target="Microsoft.Net.Http 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Target="Newtonsoft.Json 4.5.6" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Target="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Target="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages.OAuth 2.0.20710.0" Target="Microsoft.AspNet.WebPages.WebData 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages.OAuth 2.0.20710.0" Target="DotNetOpenAuth.AspNet 4.0.3.12153" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages.WebData 2.0.20710.0" Target="Microsoft.AspNet.WebPages.Data 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Target="jQuery 1.7.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Target="jQuery.Validation 1.9.0.1" Category="Package Dependency" />
+    <Link Source="SocialNetworkApp" Target="EntityFramework 5.0.0" Category="Installed Package" />
+    <Link Source="SocialNetworkApp" Target="jQuery.UI.Combined 1.8.20.1" Category="Installed Package" />
+    <Link Source="SocialNetworkApp" Target="knockoutjs 2.1.0" Category="Installed Package" />
+    <Link Source="SocialNetworkApp" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Installed Package" />
+    <Link Source="SocialNetworkApp" Target="Microsoft.AspNet.Web.Optimization 1.0.0" Category="Installed Package" />
+    <Link Source="SocialNetworkApp" Target="Microsoft.AspNet.WebApi 4.0.20710.0" Category="Installed Package" />
+    <Link Source="SocialNetworkApp" Target="Microsoft.AspNet.WebPages.OAuth 2.0.20710.0" Category="Installed Package" />
+    <Link Source="SocialNetworkApp" Target="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Category="Installed Package" />
+    <Link Source="SocialNetworkApp" Target="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Category="Installed Package" />
+    <Link Source="SocialNetworkApp" Target="Modernizr 2.5.3" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

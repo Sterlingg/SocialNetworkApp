@@ -1,0 +1,55 @@
+﻿@model SocialNetworkApp.Models.Group
+
+<button id = "homeviewbtn">Home</button>
+
+@using (Ajax.BeginForm("_AddGroup", 
+                        "SideBar", 
+                        new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainLeft",
+                                          OnSuccess = "new function(){}" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Group</legend>
+
+     
+          <div class="editor-label">
+            @Html.LabelFor(model => model.IsPrivate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsPrivate)
+            @Html.ValidationMessageFor(model => model.IsPrivate)
+        </div>
+
+           <div class="editor-label">
+            @Html.LabelFor(model => model.GroupName)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GroupName)
+            @Html.ValidationMessageFor(model => model.GroupName)
+        </div>
+
+   
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GroupDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GroupDescription)
+            @Html.ValidationMessageFor(model => model.GroupDescription)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<script type="text/javascript">
+
+      $("#homeviewbtn").click(function () {           
+            $("#mainLeft").load("@Url.Action("_SideBar","SideBar")")
+        });
+
+
+</script>

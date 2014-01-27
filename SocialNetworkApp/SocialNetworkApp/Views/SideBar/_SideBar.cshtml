@@ -1,0 +1,48 @@
+﻿<script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/SideBar.js")" type="text/javascript"></script>
+@if (Request.IsAuthenticated)
+{
+    <text>
+    <button id="makepostbtn">
+        Make Post</button>
+    <button id="addgroupbtn">
+        Add Group</button>
+    <button id="profilebtn">
+        Profile
+    </button>
+    </text>
+}
+else
+{
+}
+<div>
+    <h2>Most Popular Groups
+    </h2>
+</div>
+<div id="updatediv">
+    @Html.Action("_PopularGroups")
+</div>
+<div id="searchdiv">
+    @Html.Action("_SearchGroups", "Sidebar")
+</div>
+<script type="text/javascript">
+    $("#addgroupbtn").click(function () {
+
+        $("#mainLeft").load("@Url.Action("_AddGroup", "SideBar")")
+    })
+    var dialog = $('#postPopup')
+
+    $("#makepostbtn").click(function () {
+
+        dialog.load("@Url.Action("_MakePost", "Posting")")
+        dialog.show()
+        drawCircleOverlay(userLat, userLong)
+    })
+    $("#profilebtn").click(function () {
+        $("#mainLeft").load("@Url.Action("_ViewProfile", "SideBar")")
+    })
+    //initSideBarButtons();
+    //Posting button. Dynamically inserts html into a hidden div. (And displays it)
+
+</script>
+@Scripts.Render("~/Scripts/SideBar.js")

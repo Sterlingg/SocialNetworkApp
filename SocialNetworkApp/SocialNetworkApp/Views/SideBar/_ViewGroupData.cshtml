@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "_ViewGroupData";
+}
+
+@model SocialNetworkApp.Models.ViewGroupDataModel
+
+<button id="homebtn">Home</button>
+<button id="yrgroupsbtn">Your Groups</button>
+
+<br />
+<h2>@Model.Group.GroupName</h2>
+<i>@Html.DisplayFor(model => model.Group.GroupDescription)</i>
+@if (Model.Group.IsPrivate)
+{
+    <br />
+    <br />
+    <i>This is a private group.</i>
+}
+<br />
+<table>
+    <tr>
+        <td>
+            <b>@Model.Group.PostCount</b>
+        </td>
+        <td>
+            <span style="text-align: right">Posts</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>@Model.Group.SubscriberCount</b>
+        </td>
+        <td>
+            <span style="text-align: right">Subscribers</span>
+        </td>
+    </tr>
+</table>
+
+<h3>Most Recent Posts
+</h3>
+<table class="postviewtable">
+    <tr>
+        <th>Title
+        </th>
+        <th>Location
+        </th>
+        <th>Creation Date
+        </th>
+    </tr>
+    @for (int i = 1; i < 6; ++i)
+    {
+        <tr>
+            @{var item = Model.Group.Posts.ElementAtOrDefault(Model.Group.Posts.Count() - i);
+              if (item != null)
+              {
+                <td>
+                    @item.PostTitle
+                </td>
+                <td>
+                    @item.Location.LocationName
+                </td>
+                <td>
+                    @item.CreationDate.ToShortDateString()
+                    <span>at </span>
+                    @item.CreationDate.ToShortTimeString()
+                </td>
+              }
+            }
+
+        </tr>
+    }
+</table>
+
+<br />
+@if (@ViewBag.IsSubscribed)
+{
+    <span>You are subscribed to this group.&nbsp&nbsp</span>
+    @Ajax.ActionLink("Remove Subscription", "_ChangeGroupSubscription"
+    , new { GroupId = Model.Group.GroupID, addSubscription = false }
+    , new AjaxOptions { HttpMethod="Post", UpdateTargetId = "mainLeft", OnSuccess = "updatesubbar" })
+}
+else
+{
+    <span>You are not subscribed.&nbsp&nbsp</span>
+    @Ajax.ActionLink("Subscribe Now", "_ChangeGroupSubscription"
+    , new { GroupId = Model.Group.GroupID, addSubscription = true }
+    , new AjaxOptions { HttpMethod="Post", UpdateTargetId = "mainLeft", OnSuccess = "updatesubbar" })
+}
+@if (@ViewBag.IsOwner)
+{
+    <br />
+    <span>You are a moderator for this group.&nbsp&nbsp</span>
+    @Ajax.ActionLink("Edit Group Options", "_EditGroupOptions"
+    , new { GroupId = Model.Group.GroupID }
+    , new AjaxOptions { UpdateTargetId = "mainLeft" })
+}
+<br />
+<h3>Moderators for this group</h3>
+@foreach (var item in @Model.Group.Users)
+{
+    @item.UserName<br />
+}
+<script type="text/javascript">
+    $('#yrgroupsbtn').click(function () {
+        $("#mainLeft").load("@Url.Action("_ViewYourGroups", "SideBar")")
+    })
+
+    $('#homebtn').click(function () {
+        $("#mainLeft").load("@Url.Action("_SideBar", "SideBar")")
+    })
+
+    function updatesubbar() {
+        updateMarkers()
+        $('#subscribefooter').load("@Url.Action("_Subscriptions", "Footer")")
+    }
+</script>

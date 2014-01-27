@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SocialNetworkApp.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserProfileId)                        
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)    
+        </th>
+        <th>
+            User Info   
+            </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+           <td>
+            @Html.DisplayFor(modelItem => item.UserProfileId)
+        </td>
+           <td>
+           @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+                   <td>
+            @Html.ActionLink("Details", "Details", new { id=item.UserProfileId } )
+        </td>
+
+    </tr>
+}
+
+</table>

@@ -1,0 +1,195 @@
+﻿@model SocialNetworkApp.Models.EditGroupDataModel
+
+
+<button id="homebtn">Home</button>
+<button id="yrgroupsbtn">Your Groups</button>
+<button>@Ajax.ActionLink("Back", "_ViewGroupData"
+,new {gid = Model.Group.GroupID}
+, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainLeft" }
+, new { @class = "linkAsBtn" })
+</button>
+
+<h2>Editing "@Model.Group.GroupName"</h2>
+@if (Model.Group.IsPrivate)
+{
+    <i>This is a private group.</i>
+    using (Ajax.BeginForm("_EditGroupMakePublic"
+        , "SideBar"
+        , new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainLeft", OnBegin = "return confirm('Are you sure you want to make this group public? You cannot make it private again, and anyone can subscribe and post to this group if it is public.')" }))
+    {
+    <fieldset>
+        <legend></legend>
+        @Html.HiddenFor(model => model.Group.GroupID)
+        @Html.HiddenFor(model => model.Offset)
+        <input type="submit" value="Make Public" />
+    </fieldset>
+    }
+}
+
+<br />
+<h3>Remove Post From Group</h3>
+<h5>Choose from below:</h5>
+<table class="postviewtable">
+    <tr>
+        <th>ID
+        </th>
+        <th>Title
+        </th>
+        <th>Creation Date
+        </th>
+        <th></th>
+    </tr>
+    @for (int i = @Model.Offset + 1; i < @Model.Offset + 6; ++i)
+    {
+        <tr>
+            @{var item = Model.Group.Posts.ElementAtOrDefault(Model.Group.Posts.Count() - i);
+              if (item != null)
+              {
+                <td>
+                    @item.PostID
+                </td>
+                <td>
+                    @item.PostTitle
+                </td>
+                <td>
+                    @item.CreationDate.ToShortDateString()
+                    <span> at </span>
+                    @item.CreationDate.ToShortTimeString()
+                </td>
+                <td>
+
+                    @using (Ajax.BeginForm("_EditGroupRemovePost", "SideBar"
+                        , new AjaxOptions { Confirm="Are you sure you want to delete this post?", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainLeft" }))
+                    {
+                        <fieldset>
+                            <legend>EditGroupData</legend>
+
+                            @Html.Hidden("PostId"+i, @item.PostID)
+                            @Html.HiddenFor(model => model.Group.GroupID)
+                            @Html.HiddenFor(model => model.Offset)
+                            <input type="submit" class="submitBtnAsTxt" value="Delete" />
+
+                        </fieldset>
+                    }
+                </td>
+              }
+            }
+
+        </tr>
+    }
+</table>
+@using (Ajax.BeginForm("_EditGroupScrollPosts", "SideBar", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainLeft" }))
+{
+    <fieldset>
+        <legend>EditGroupData</legend>
+
+        
+        @Html.Hidden("curroffset"+Model.Offset, Model.Offset)
+        <input type="hidden" id="IncreaseOffset" name="IncreaseOffset" value="" />
+        @Html.HiddenFor(model => model.Group.GroupID)
+        <div style="width: 95%">
+            @if (Model.Offset > 0)
+            {
+                <input type="submit" value="Newer Posts" style="float: left" onclick="setoffsetval(false)" />
+            }
+            @if (Model.Offset < Model.Group.PostCount - 5)
+            {
+                <input type="submit" value="Older Posts" style="float: right" onclick="setoffsetval(true)" />
+            }
+        </div>
+    </fieldset>
+}
+
+<h5>Or Remove Post by ID:</h5>
+
+@using (Ajax.BeginForm("_EditGroupRemovePostByID", "SideBar", new AjaxOptions { Confirm="Are you sure you want to delete this post?", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainLeft" }))
+{
+    <fieldset>
+        <legend>EditGroupData</legend>
+        @Html.HiddenFor(model => model.Offset)
+        @Html.HiddenFor(model => model.Group.GroupID)
+        @Html.ValidationMessageFor(model => model.DeletingPostId)
+        @Html.EditorFor(model => model.DeletingPostId)
+        <input type="submit" value="Delete Post" />
+    </fieldset>
+}
+
+<br />
+<h3>Invite User to Join Group:</h3>
+@using (Ajax.BeginForm("_EditGroupAddInvite", "SideBar", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainLeft" }))
+{
+    <fieldset>
+        <legend>EditGroupData</legend>
+        @Html.HiddenFor(model => model.Offset)
+        @Html.HiddenFor(model => model.Group.GroupID)
+        @Html.ValidationMessage("InviteUserName")
+        Enter Username <input type="text" id="InviteUserName" name="InviteUserName" />
+        <input type="submit" value="Invite User" />
+    </fieldset>
+}
+<h4>Current Invitees:</h4>
+@foreach (var item in @Model.Group.Users1)
+{
+    @item.UserName<br />
+}
+<br />
+<h3>Invite User to Become Moderator:</h3>
+@using (Ajax.BeginForm("_EditGroupAddMod", "SideBar", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainLeft" }))
+{
+    <fieldset>
+        <legend>EditGroupData</legend>
+        @Html.HiddenFor(model => model.Offset)
+        @Html.HiddenFor(model => model.Group.GroupID)
+        @Html.ValidationMessage("ModUserName")
+        Enter Username <input type="text" id="ModUserName" name="ModUserName" />
+        <input type="submit" value="Invite User" />
+    </fieldset>
+}
+<h4>Current Moderators:</h4>
+@foreach (var item in @Model.Group.Users)
+{
+    @item.UserName<br />
+}
+<br />
+<h3>Ban User From Group:</h3>
+@using (Ajax.BeginForm("_EditGroupBanUser", "SideBar", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainLeft"}))
+{
+    <fieldset>
+        <legend>EditGroupData</legend>
+        @Html.HiddenFor(model => model.Offset)
+        @Html.HiddenFor(model => model.Group.GroupID)
+        @Html.ValidationMessage("BanUserName")
+        Enter Username <input type="text" id="BanUserName" name="BanUserName" />
+        <input type="submit" value="Ban User" />
+    </fieldset>
+}
+<h4>Current Subscribers:</h4>
+@foreach (var item in @Model.Group.Users2)
+{
+    @item.UserName<br />
+}
+<br />
+
+<script type="text/javascript">
+    function setoffsetval(yesno) {
+        if (yesno) {
+            $('#IncreaseOffset').val("true")
+        }
+        else {
+            $('#IncreaseOffset').val("false")
+        }
+    }
+</script>
+
+
+<script type="text/javascript">
+    $('#yrgroupsbtn').click(function () {
+        $("#mainLeft").load("@Url.Action("_ViewYourGroups", "SideBar")")
+    })
+
+    $('#homebtn').click(function () {
+        $("#mainLeft").load("@Url.Action("_SideBar", "SideBar")")
+    })
+
+</script>
+	

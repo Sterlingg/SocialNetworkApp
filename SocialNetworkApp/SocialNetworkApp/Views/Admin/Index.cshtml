@@ -1,0 +1,74 @@
+﻿@model IEnumerable<SocialNetworkApp.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+      <div class="widthHack">
+          ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      </div>
+<h2>Users Roles</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserProfileId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>Role
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.UserProfileId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+
+            <td>
+                @{ String name = item.UserName;
+                   String[] hold = System.Web.Security.Roles.GetRolesForUser(name);
+                   if (hold[0] == "Admin")
+                   {
+                 
+                 
+                    <select id="roleName" name="roleName">
+                        <option selected="selected" value="1">Admin</option>
+                        <option value="2">User</option>
+                        
+                    </select>
+ 
+                   }
+                   else
+                   {
+                    <select id="roleName" name="roleName" onchange="windows.location.href=@Url.Action("Admin", new {uName = name })">
+                        <option value="1">Admin</option>
+                        <option selected="selected" value="2">User</option>
+                        
+                    </select>
+                   
+                    @Html.ActionLink("Change to Admin", "_Index", new { uName=name })
+                   }
+             
+ 
+
+
+                }
+            </td>
+        </tr>
+    }
+
+
+</table>
+<p>The fancy drop down box is there because it took 3 hours of my time and still does nothing</p>
+
+
+
+

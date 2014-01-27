@@ -1,0 +1,59 @@
+﻿@model SocialNetworkApp.Models.ViewYourGroupsModel
+
+<button id="homebtn">Home</button>
+<button id="profilebtn">Profile</button>
+
+<h2>Your Groups</h2>
+<br />
+<h3>You are a moderator of these groups:</h3>
+<div style="width: 85%">
+    @foreach (var item in Model.Ownerships)
+    {
+        @Ajax.ActionLink(item.GroupName, "_ViewGroupData"
+        , new { gid = item.GroupID }
+        , new AjaxOptions { UpdateTargetId = "mainLeft" })
+        <br />
+    }
+    @if (Model.Ownerships.Count == 0)
+    {
+        <span>You have not created any groups. Add a new group to become a moderator.</span>
+    }
+
+</div>
+<br />
+<h3>Your are subscribed to these groups:</h3>
+<div style="width: 85%">
+    @foreach (var item in Model.Subscriptions)
+    {
+        @Ajax.ActionLink(item.GroupName, "_ViewGroupData", new { gid = item.GroupID }, new AjaxOptions { UpdateTargetId = "mainLeft" })
+        <br />                                
+    }
+    @if (Model.Subscriptions.Count == 0)
+    {
+        <span>You are not subscribed to any groups.</span>
+    }
+
+</div>
+<br />
+<h3>You are invited to join these groups:</h3>
+<div style="width: 85%">
+    @foreach (var item in Model.Invitations)
+    {
+        @Ajax.ActionLink(item.GroupName, "_ViewGroupData", new { gid = item.GroupID }, new AjaxOptions { UpdateTargetId = "mainLeft" })
+        <br />
+    }
+    @if (Model.Invitations.Count == 0)
+    {
+        <span>You have not been invited to any groups.</span>
+    }
+</div>
+
+<script type="text/javascript">
+    $('#homebtn').click(function () {
+        $("#mainLeft").load("@Url.Action("_SideBar", "SideBar")")
+    })
+
+    $('#profilebtn').click(function(){
+        $("#mainLeft").load("@Url.Action("_ViewProfile","SideBar")")
+    })
+</script>

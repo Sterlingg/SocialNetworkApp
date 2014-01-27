@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "_MakePost";
+}
+@model SocialNetworkApp.Models.PostLocationModel
+<script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+<link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.20.min.js")" type="text/javascript"></script>
+<div id="postcontainer">
+<h1> Post! </h1>
+    @using (Ajax.BeginForm("_MakePost", "Posting", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "postPopup", OnSuccess = "updatePopularGroups" }))
+    {
+        @Html.ValidationSummary(true)       
+        <div class="editor-label">
+            <label class="postlabels" for="Tpost_PostTitle">
+                Title
+            </label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Tpost.PostTitle)
+            @Html.ValidationMessageFor(model => model.Tpost.PostTitle)
+        </div>
+        <div class="editor-label">
+            <label class="postlabels" for="Tpost_PostContent">
+                Content</label>
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Tpost.PostContent,
+         new
+         {
+             rows = "4",
+             cols = "15",
+             id = "Tpost_PostContent",
+             name = "Tpost.PostContent"
+         })
+            @Html.ValidationMessageFor(model => model.Tpost.PostContent)
+        </div>
+        <div class="editor-label">
+            <label class="postlabels" for="Tpost_EndDate">
+                Expires
+            </label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Tpost.EndDate)
+            @Html.ValidationMessageFor(model => model.Tpost.EndDate)
+        </div>
+        <div class="editor-label">
+            <label class="postlabels" for="Tpost_VisibleProximity">
+                Visiblity radius in meters:</label>
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Tpost.VisibleProximity, new { id = "vpinput" })
+            @Html.ValidationMessageFor(model => model.Tpost.VisibleProximity)
+        </div>
+        <div class="editor-label">
+            <label class="postlabels" for="Tpost_GroupID">
+                Group
+            </label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Tpost.GroupID
+                , (SelectList)ViewBag.GroupList
+                , new { @class = "dropdowns" })
+            @Html.ValidationMessageFor(model => model.Tpost.GroupID)
+        </div>
+        if (User.IsInRole("Admin"))
+        {            
+               <div class="editor-label"> <label class="postlabels" for="Tlocation_Latitude">
+            Latitude </label> </div>
+            @Html.TextBoxFor(model => model.Tlocation.Latitude
+                      , new
+                      {
+                          @class = "text-box single-line"
+                          ,
+                          id = "Tlocation_Latitude"
+                          ,
+                          name = "Tlocation.Latitude"
+                          ,
+                          value = ""
+                      })
+            @Html.ValidationMessageFor(model => model.Tlocation.Latitude)
+                     
+            <div class="editor-label"> <label class="postlabels" for="Tlocation_Longitude">
+            Longitude </label> </div>
+            @Html.TextBoxFor(model => model.Tlocation.Longitude
+                      , new
+                      {
+                          @class = "text-box single-line"
+                          ,
+                          id = "Tlocation_Longitude"
+                          ,
+                          name = "Tlocation.Longitude"
+                          ,
+                          value = ""
+                      })
+            @Html.ValidationMessageFor(model => model.Tlocation.Longitude)
+
+            <div class="editor-label"> <label class="postlabels" for="Tlocation_LocationName">
+            Location Name </label> </div>
+            @Html.EditorFor(model => model.Tlocation.LocationName)
+            @Html.ValidationMessageFor(model => model.Tlocation.LocationName)
+        }
+
+
+        if (User.IsInRole("User"))
+        {      
+            <div class="editor-label"> <label class="postlabels" for="Tlocation_LocationName">
+            Location Name </label> </div>
+            @Html.EditorFor(model => model.Tlocation.LocationName)
+            @Html.ValidationMessageFor(model => model.Tlocation.LocationName)
+        
+            @Html.TextBoxFor(model => model.Tlocation.Latitude
+                      , new
+                      {
+                          @class = "text-box single-line"
+                          ,
+                          id = "Tlocation_Latitude"
+                          ,
+                          name = "Tlocation.Latitude"
+                          ,
+                          value = "",
+                          type = "hidden"
+                      })
+            @Html.ValidationMessageFor(model => model.Tlocation.Latitude)
+                     
+            @Html.TextBoxFor(model => model.Tlocation.Longitude
+                      , new
+                      {
+                          @class = "text-box single-line"
+                          ,
+                          id = "Tlocation_Longitude"
+                          ,
+                          name = "Tlocation.Longitude"
+                          ,
+                          value = "",
+                          type = "hidden"
+                      })
+            @Html.ValidationMessageFor(model => model.Tlocation.Longitude)
+
+        }
+
+            <input type="submit" value="Post" />
+                  <button id="closepostbtn" type ="button">
+                    Close
+                 </button> 
+    }
+       
+</div>
+
+<script type="text/javascript">
+
+    initPostButtons();
+
+    function updatePopularGroups() {
+        $('#updatediv').load("@Url.Action("_PopularGroups", "SideBar")")
+      }
+</script>

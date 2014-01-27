@@ -1,0 +1,84 @@
+﻿@model SocialNetworkApp.Models.SearchGroupsModel
+
+@{
+    ViewBag.title = "_SearchGroups";
+}
+
+@using (Ajax.BeginForm("_SearchGroups",
+                        "SideBar",
+                        new AjaxOptions
+                        {
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "searchdiv",
+                            OnSuccess = "new function(){}"
+                        }))
+{
+    <fieldset>
+        <legend>SearchGroups</legend>
+         <div id="editor-label">
+            <h2>Search Public Groups</h2>
+        </div>
+        <div id="editor-field">
+            @Html.ValidationMessageFor(Model => Model.SearchTerm, string.Empty, new { id = "searchform" })
+            @Html.TextBoxFor(Model => Model.SearchTerm, new {id = "searchform"})
+        </div>
+        <p>
+            <input type="submit" value="Search" />
+        </p>
+
+
+        @{
+    if (this.Model != null && 
+        this.Model.SearchTerm!=null 
+        && this.Model.SearchTerm.Length > 2 
+        && this.Model.Groups.Count > 0)
+    {
+            <h3><i>Search Results for "@Model.SearchTerm"</i>
+            </h3>
+   
+            <table class="searchtable">
+                <tr>
+                    <td>Group Name
+                    </td>
+                    <td>Description
+                    </td>
+                </tr>
+                @foreach (var item in Model.Groups)
+                {
+                    <tr>
+                        <td>
+                            @{
+                        if (WebSecurity.IsAuthenticated)
+                        {
+                        
+                                @Ajax.ActionLink(item.GroupName, "_ViewGroupData", new { gid = item.GroupID }, new AjaxOptions { UpdateTargetId = "mainLeft" })
+                        }
+                        else
+                        {
+                                @Html.DisplayFor(ModelItem => item.GroupName, new {id = "searchform"})
+                        }
+                            }
+
+                        </td>
+                        <td>
+                            <i>@Html.DisplayFor(ModelItem => item.GroupDescription)</i>
+                        </td>
+                    </tr>
+                
+                }
+            </table>     
+    }
+    else if (this.Model.SearchTerm != null && this.Model.SearchTerm.Length >= 3)
+    {
+            <h3><i>No Search Results Found for "@Model.SearchTerm"</i>    </h3>
+    }
+    else
+    {
+     <h3><i>Please enter a search term.</i>    </h3>
+    }
+
+        }
+
+    </fieldset>
+
+}

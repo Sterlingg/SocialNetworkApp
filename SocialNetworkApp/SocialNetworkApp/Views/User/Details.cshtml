@@ -1,0 +1,66 @@
+﻿@model SocialNetworkApp.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details For User @Html.DisplayFor(model => model.UserName)</h2>
+
+
+
+<h3>Posts</h3>
+<table>
+
+    <tr>
+        <th>
+        Post Title
+        </th>
+
+        <th>
+        ID
+        </th>
+
+        <th>
+        PostContent
+        </th>
+    </tr>
+    @foreach (var item in Model.Posts) {
+    <tr>
+           <td>
+            @Html.DisplayFor(modelItem => item.PostTitle)
+        </td>
+
+           <td>
+            @Html.DisplayFor(modelItem => item.PostID)
+        </td>
+
+           <td>
+            @Html.DisplayFor(modelItem => item.PostContent)
+        </td>
+    </tr>
+}
+</table>
+<h3>Subscriptions</h3>
+<table>
+
+    <tr>
+        <th>
+        Group Name
+        </th>
+
+        <th>
+        Group ID
+        </th>
+    </tr>
+    @foreach (var item in Model.Groups2) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GroupName)
+        </td>
+
+           <td>
+            @Html.DisplayFor(modelItem => item.GroupID)
+        </td>
+    </tr>
+}
+</table>

@@ -1,0 +1,93 @@
+﻿@model SocialNetworkApp.Models.Post
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Post</legend>
+
+        @Html.HiddenFor(model => model.PostID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostTitle)
+            @Html.ValidationMessageFor(model => model.PostTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostContent)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostContent)
+            @Html.ValidationMessageFor(model => model.PostContent)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreationDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreationDate)
+            @Html.ValidationMessageFor(model => model.CreationDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EndDate)
+            @Html.ValidationMessageFor(model => model.EndDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VisibleProximity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VisibleProximity)
+            @Html.ValidationMessageFor(model => model.VisibleProximity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LocationID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LocationID)
+            @Html.ValidationMessageFor(model => model.LocationID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserID)
+            @Html.ValidationMessageFor(model => model.UserID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GroupID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GroupID)
+            @Html.ValidationMessageFor(model => model.GroupID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

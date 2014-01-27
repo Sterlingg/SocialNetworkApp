@@ -1,0 +1,66 @@
+﻿@model SocialNetworkApp.Models.PopularGroupsModel
+<table>
+    <tr>
+        @if (!Request.IsAuthenticated)
+        {
+            <td>Show?
+            </td>
+        }
+        <td>Name
+        </td>
+        <td># of Posts
+        </td>
+    </tr>
+    @foreach (var item in Model.Groups)
+    {
+        <tr>
+            @if (!Request.IsAuthenticated)
+            {
+
+                <td>
+                    @Html.CheckBox("c" + item.GroupID,
+                                  new
+                                  {
+                                      @checked = "checked"
+                                  ,
+                                      onchange = "updateMapFromCheck(" + item.GroupID + ");"
+                                  })
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostCount)
+            </td>
+            <td>
+                @{
+                
+            if (WebSecurity.IsAuthenticated)
+            {
+                if (Model.CurrentUser.Groups2.FirstOrDefault(d => d.GroupID == item.GroupID) != null)
+                {
+                    @Ajax.ActionLink("Unsubscribe", "_ChangeSubscription"
+                    , new { GroupId = item.GroupID, addSubscription = false }
+                    , new AjaxOptions { HttpMethod="Post", UpdateTargetId = "updatediv", OnSuccess = "updatesubscribebar" }
+                     , new { @class = "subscriptionlinks" })
+                }
+                else
+                {
+                    @Ajax.ActionLink("Subscribe", "_ChangeSubscription"
+                    , new { GroupId = item.GroupID, addSubscription = true }
+                    , new AjaxOptions { HttpMethod="Post", UpdateTargetId = "updatediv", OnSuccess = "updatesubscribebar" }
+                    , new { @class = "subscriptionlinks" });
+                }
+            }
+                }
+            </td>
+        </tr>
+    }
+</table>
+<script type="text/javascript">
+    function updatesubscribebar() {
+        $('#subscribefooter').load("@Url.Action("_Subscriptions", "Footer")")
+        updateMarkers()
+    }
+</script>

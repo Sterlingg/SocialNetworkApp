@@ -1,0 +1,71 @@
+﻿@model SocialNetworkApp.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Post</legend>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.PostTitle)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostTitle)
+    </div>
+    <br />
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.PostContent)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostContent)
+    </div>
+    <br />
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.CreationDate)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreationDate)
+    </div>
+    <br />
+    <div class="display-label">
+        <b> @Html.DisplayNameFor(model => model.EndDate)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EndDate)
+    </div>
+    <br />
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.VisibleProximity)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VisibleProximity)
+    </div>
+    <br />
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.LocationID)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocationID)
+    </div>
+    <br />
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.UserID)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserID)
+    </div>
+    <br />
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.GroupID)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GroupID)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PostID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
